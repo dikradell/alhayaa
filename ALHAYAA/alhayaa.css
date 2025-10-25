@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between; /* puts logo left, nav right */
+  align-items: center;
+  padding: 10px 50px;
+  background: #8A9A5B ;
+  box-shadow: 0 4px 10px #895129;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logo h1 {
+  color: #895129;
+  font-weight: 900;
+   font-family: "Noto Kufi Arabic", sans-serif;
+   font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #895129;
+  font-weight: bolder;
+  transition: color 0.3s ease;
+  position: relative; 
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* distance from text */
+  width: 0;
+  height: 2px; /* line thickness */
+  background-color: wheat;
+  transition: width 0.3s ease;
+}
+
+/* when hovered, show the line */
+nav a:hover::after {
+  width: 100%;
+}
+nav a:hover {
+  color: wheat;
+}
+
+body {
+  background-color: #fffaf5;
+  color: #895129;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Quicksand", sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+/*home
+/* ==== HOME SECTION ==== */
+.hero {
+  padding-top: 130px;
+  padding-bottom: 100px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 120px;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.hero-content .text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  color: #895129;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #9a7b4f;
+}
+
+.hero-content h1 span {
+  color: #8A9A5B;
+}
+
+/* 🐝 Circular Floating Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 260px;
+  width: 260px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 40px #895129;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero-logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+
+/*aboutus
+/* ==== ABOUT US SECTION ==== */
+
+/* ==== ABOUT SECTION (MODERN STYLE) ==== */
+.about-modern {
+  padding: 100px 10%;
+  background: #fffaf5;
+  color: #3b2a1a;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-modern-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.about-modern-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-modern-text h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #8A9A5B;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.about-modern-text h1 span {
+  color: #b1794d;
+  font-family: "Noto Kufi Arabic", sans-serif;
+  font-weight: 700;
+}
+
+.signature {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  color: #b1794d;
+  margin-bottom: 30px;
+}
+
+.about-desc {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #9a7b4f;
+  max-width: 500px;
+}
+
+.about-modern-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-modern-image img {
+  width: 80%;
+  max-width: 420px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(97, 53, 14, 0.2);
+  transition: transform 0.5s ease;
+}
+
+.about-modern-image img:hover {
+  transform: scale(1.03);
+}
+
+
+
+.faq-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.faq-heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #895129;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #946500;
+}
+
+.faq-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+
+.faq-card {
+  background: #fff;
+  border: 1px solid #8A9A5B;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: left;
+  box-shadow: 0 2px 6px #8A9A5B;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-card:hover {
+  background: #f5f1ee;
+  border-color: #e0c9b7;
+  transform: translateY(-5px);
+}
+
+.faq-question {
+  font-size: 1.2rem;
+  color: #8A9A5B;
+  margin-bottom: 0.8rem;
+}
+
+.faq-answer {
+  font-size: 1rem;
+  color: #895129;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+
+
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-modern-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-modern-text h1 {
+    font-size: 2.3rem;
+  }
+  .about-desc {
+    margin: 0 auto;
+  }
+}
+
+.collection-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f9f7f5;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  color: #895129;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #b4895b;
+  border-radius: 2px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.collection-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.collection-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.collection-card:hover img {
+  transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.collection-card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background-color: #b4895b;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #caa37a;
+}
+
+
+
+
+
+.contact-section {
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.contact-title {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color:#8A9A5B ;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-shadow: 0 0 10px #895129;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  gap: 10rem;
+  flex-wrap: wrap;
+}
+
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon-wrapper i {
+  font-size: 2.2rem;
+  color: #8b6b4f;
+  transition: all 0.3s ease;
+}
+
+.icon-wrapper:hover i {
+  color: #8A9A5B;
+  transform: translateY(-5px);
+}
+
+/* Hidden text initially */
+.contact-info {
+  position: absolute;
+  top: 2.8rem;
+  font-size: 0.95rem;
+  background: #fff;
+  color: #8b6b4f;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Show text when hovering */
+.icon-wrapper:hover .contact-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+  .contact-icons {
+    gap: 2rem;
+  }
+
+  .icon-wrapper i {
+    font-size: 2rem;
+  }
+
+  .contact-info {
+    font-size: 0.9rem;
+  }
+}
+
+.footer {
+  background-color: #895129;
+  color: wheat;
+  text-align: center;
+  padding: 1rem 1rem;
+  font-family: "Poppins", sans-serif;
+  border-top: 1px solid #8A9A5B;
+  position: relative;
+}
+
+.footer-quote p {
+  font-size: 1.1rem;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  color: #8A9A5B;
+  margin-bottom: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer-quote p:hover {
+  color: wheat;
+}
+
+.footer-line {
+  width: 60px;
+  height: 3px;
+  background-color: wheat;
+  margin: 0 auto 1.2rem;
+  border-radius: 2px;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: wheat;
+  letter-spacing: 0.3px;
+}
+
+.footer-bottom p::before {
+  content: "• ";
+  color: #e0c9b7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
